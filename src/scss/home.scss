@@ -1797,18 +1797,41 @@
 
 .facilities-item {
   $self: &;
-  padding: 30px 0;
-  border-bottom: 1px solid rgba($primary, 0.24);
+  padding: 40px 0;
+  border-top: 1px solid rgba($primary, 0.24);
   transition: all 0.6s ease 0s;
   @include media-min($tablet) {
     padding: 50px 0;
   }
-  &.open {
-    padding: 150px 0;
-    border-bottom-color: rgba($primary, 0);
+  &:first-child {
+    border-top: none;
+  }
+  &:last-child {
+    border-bottom: 1px solid rgba($primary, 0.24);
+  }
 
+  &.open + & {
+    border-top-color: rgba($primary, 0);
+  }
+  &.open {
+    padding: 20px 0 40px;
+    border-top-color: rgba($primary, 0);
+    @include media-min($tablet) {
+      padding: 50px 0;
+    }
+    @include media-min($pc) {
+      padding: 100px 0;
+    }
+    @include media-min($largePc) {
+      padding: 150px 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
     &:last-child {
       padding-bottom: 0;
+      border-bottom-color: rgba($primary, 0);
     }
   }
 
@@ -1863,13 +1886,15 @@
       object-fit: cover;
     }
 
+    @include media-min($mobile) {
+      width: 180px;
+      height: 180px;
+    }
     @include media-min($tablet) {
       position: absolute;
       top: 50%;
       left: 0;
       transform: translate3d(0, -50%, 0);
-      width: 180px;
-      height: 180px;
     }
     @include media-min($pc) {
       width: 217px;
@@ -1913,12 +1938,20 @@
     align-items: center;
     justify-content: space-between;
 
-    @include media-max($tablet) {
-      .open & {
-        position: relative;
+    .open & {
+      position: relative;
+      padding-left: 100px;
+      @include media-min($mobileMini) {
+        padding-left: 134px;
+      }
+      @include media-min($mobile) {
         padding-left: 150px;
       }
+      @include media-min($tablet) {
+        padding-left: 0;
+      }
     }
+
     @include media-min($tablet) {
       min-height: 180px;
       column-gap: 80px;
@@ -2013,6 +2046,9 @@
 
     @include media-max($tablet) {
       text-align: center;
+    }
+    @include media-min($mobile) {
+      font-size: 32px;
     }
     @include media-min($tablet) {
       font-size: 36px;
