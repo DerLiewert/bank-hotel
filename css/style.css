@@ -1025,8 +1025,7 @@ body::after {
 }
 .about {
   padding: 50px 0 70px;
-  position: relative;
-  overflow: hidden
+  position: relative
 }
 .about__bg-decor {
   position: absolute
@@ -2738,7 +2737,7 @@ body::after {
   }
   .facilities-item.open .facilities-item__inner {
     min-height: 49.22vw;
-    padding: 0 47.168vw 0 24.65vw
+    padding-right: 44vw
   }
   .facilities-item__image {
     position: absolute;
@@ -2778,7 +2777,7 @@ body::after {
     margin-bottom: 30px
   }
   .facilities-item__text {
-    max-width: 250px
+    max-width: 335px
   }
   .best__title {
     margin-bottom: 202px
@@ -3132,14 +3131,14 @@ body::after {
     transform: translate3d(-55px,-60px,0)
   }
   .facilities-item.open {
-    padding: 100px 0
+    padding: 100px 0 50px
   }
   .facilities-item__inner {
     padding: 0 170px 0 355px
   }
   .facilities-item.open .facilities-item__inner {
     min-height: 44.56vw;
-    padding: 0 49.3vw 0 24.65vw
+    padding-right: 49.3vw
   }
   .facilities-item__image {
     width: 217px;
@@ -3169,7 +3168,7 @@ body::after {
     margin-bottom: 40px
   }
   .facilities-item__text {
-    max-width: 335px
+    max-width: 442px
   }
   .facilities-item:not(.open) .facilities-item__arrow img {
     width: 70px;
@@ -3427,14 +3426,14 @@ body::after {
     transform: translate3d(-95px,-95px,0)
   }
   .facilities-item.open {
-    padding: 150px 0
+    padding: 150px 0 100px
   }
   .facilities-item__inner {
     padding: 0 200px 0 447px
   }
   .facilities-item.open .facilities-item__inner {
     min-height: 850px;
-    padding: 0 600px 0 447px
+    padding-right: 600px
   }
   .facilities-item__image {
     width: 284px;
