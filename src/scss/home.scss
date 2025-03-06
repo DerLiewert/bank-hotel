@@ -629,7 +629,6 @@
 .about {
   padding: 50px 0 70px;
   position: relative;
-  overflow: hidden;
   @include media-min($mobileSmall) {
     padding-top: 70px;
   }
@@ -1820,10 +1819,10 @@
       padding: 50px 0;
     }
     @include media-min($pc) {
-      padding: 100px 0;
+      padding: 100px 0 50px;
     }
     @include media-min($largePc) {
-      padding: 150px 0;
+      padding: 150px 0 100px;
     }
 
     &:first-child {
@@ -1859,15 +1858,15 @@
       cursor: auto;
       @include media-min($tablet) {
         min-height: 49.22vw;
-        padding: 0px 47.168vw 0px 24.65vw;
+        padding-right: 44vw;
       }
       @include media-min($pc) {
         min-height: 44.56vw;
-        padding: 0px 49.3vw 0px 24.65vw;
+        padding-right: 49.3vw;
       }
       @include media-min($largePc) {
         min-height: 850px;
-        padding: 0px 600px 0px 447px;
+        padding-right: 600px;
       }
     }
   }
@@ -2092,10 +2091,12 @@
 
   &__text {
     @include media-min($tablet) {
-      max-width: 250px;
+      // max-width: 250px;
+      max-width: 335px;
     }
     @include media-min($pc) {
-      max-width: 335px;
+      // max-width: 335px;
+      max-width: 442px;
     }
     @include media-min($largePc) {
       max-width: 442px;
