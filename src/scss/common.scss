@@ -1,0 +1,607 @@
+// Заголовки, загальні БЕМ блоки та інше...
+._white-block {
+  background-color: $mainColor;
+  color: $darkColor;
+}
+
+.hide-input,
+.hide-input:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title {
+  font-family: Miracle;
+  font-size: 48px;
+  line-height: 1;
+  text-transform: uppercase;
+  span {
+    color: $secondary;
+  }
+
+  @include media-min(360px) {
+    font-size: 56px;
+  }
+  @include media-min($mobileSmall) {
+    font-size: 70px;
+  }
+  @include media-min($mobile) {
+    font-size: 80px;
+  }
+  @include media-min($tablet) {
+    font-size: 100px;
+    line-height: math.div(80, 100);
+  }
+  @include media-min($pc) {
+    font-size: 125px;
+    line-height: math.div(105, 125);
+  }
+  @include media-min($largePc) {
+    font-size: 150px;
+    line-height: math.div(130, 150);
+  }
+}
+
+.title-small {
+  font-family: Miracle;
+  font-size: 30px;
+  text-transform: capitalize;
+  @include media-min($mobileSmall) {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  @include media-min($pc) {
+    font-size: 36px;
+    line-height: math.div(44, 36);
+  }
+  @include media-min($largePc) {
+    font-size: 50px;
+    line-height: math.div(60, 50);
+  }
+}
+
+.text {
+  font-size: 13px;
+  line-height: math.div(23, 13);
+  opacity: 0.8;
+  @include media-min($mobileSmall) {
+    font-size: 16px;
+  }
+  @include media-min($tablet) {
+    font-size: 13px;
+    opacity: 0.64;
+  }
+  @include media-min($pc) {
+    font-size: 18px;
+    line-height: math.div(28, 18);
+  }
+}
+
+.arrow-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  clip-path: polygon(
+    66% 2%,
+    91% 20%,
+    101% 50%,
+    91% 80%,
+    66% 98%,
+    34% 98%,
+    9% 80%,
+    -1% 50%,
+    9% 20%,
+    34% 2%
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('@img/icons/polygon-10-black.svg') center no-repeat;
+    background-size: contain;
+    opacity: 0.33;
+    transition: opacity 0.3s ease 0s;
+  }
+
+  img {
+    object-fit: contain;
+    width: 20px;
+    height: 20px;
+    @include media-min($mobile) {
+      width: 26px;
+      height: 20px;
+    }
+
+    @include media-min($pc) {
+      width: 42px;
+      height: 32px;
+    }
+  }
+
+  @include media-min($mobileMini) {
+    width: 70px;
+    height: 70px;
+  }
+  @include media-min($mobile) {
+    width: 85px;
+    height: 85px;
+  }
+  @include media-min($tablet) {
+    width: 105px;
+    height: 105px;
+  }
+
+  @include media-min($pc) {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+.book-btn {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: math.div(17, 14);
+  text-align: center;
+  color: $darkColor;
+  background-color: $secondary;
+  clip-path: polygon(
+    50% -0.5%,
+    80% 9%,
+    98% 34%,
+    98% 66%,
+    80% 91%,
+    50% 100.5%,
+    20% 91%,
+    2% 66%,
+    2% 34%,
+    20% 9%
+  );
+  outline: none;
+  transition: background-color 0.3s ease 0s;
+
+  @include media-min($pc) {
+    font-size: 20px;
+    line-height: math.div(24, 20);
+    width: 175px;
+    height: 175px;
+  }
+  @include media-min($largePc) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $secondary-hover;
+    }
+  }
+
+  &:not(:hover):focus {
+    animation: 0.8s linear 0s infinite alternate book-btn-focus;
+  }
+
+  &:active {
+    background-color: $secondary-active;
+  }
+}
+
+@keyframes book-btn-focus {
+  from {
+    background-color: $secondary;
+  }
+  to {
+    background-color: $secondary-active;
+  }
+}
+
+//========================================================================================================================================================
+.book {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+
+  @include media-min($tablet) {
+    max-width: 740px;
+    width: 100%;
+  }
+
+  @include media-max($tablet) {
+    // position: fixed;
+    // top: 0;
+    // left: 0 !important;
+    // bottom: 0;
+    // right: 0;
+    padding: 50px 0;
+    overflow: auto;
+  }
+
+  &__wrapper {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  &__body {
+    width: 100%;
+    background-color: $mainColor;
+    border: 1px solid $primary;
+    padding: 70px 60px 30px;
+    color: $darkColor;
+    @include media-max($tablet) {
+      max-width: 355px;
+      padding: 50px 20px 30px;
+    }
+    @include media-max($mobileSmall) {
+      max-width: 310px;
+      padding: 40px 15px 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 60px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba($primary, 0.24);
+  }
+
+  &__calendar {
+    @include media-max($tablet) {
+      width: 100%;
+      ._show-time & {
+        display: none;
+      }
+    }
+    @include media-min($tablet) {
+      flex-basis: 306px;
+    }
+  }
+
+  &__time {
+    @include media-max($tablet) {
+      display: none;
+      ._show-time & {
+        width: 100%;
+        display: block;
+      }
+    }
+    @include media-min($tablet) {
+      flex-basis: 244px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: math.div(28, 18);
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    button {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: math.div(17, 14);
+      text-transform: uppercase;
+    }
+  }
+
+  &__cancel {
+    display: flex;
+    align-items: center;
+    span {
+      width: 26px;
+      height: 26px;
+      position: relative;
+      border-radius: 50%;
+      border: 2px solid rgba($primary, 0.2);
+      margin-right: 15px;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        width: 10px;
+        background-color: $primary;
+        transform: translate3d(-50%, -50%, 0);
+      }
+      &::before {
+        transform: translate3d(-50%, -50%, 0) rotate(45deg);
+      }
+      &::after {
+        transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #28332d;
+        span {
+          border-color: rgba(#28332d, 0.2);
+          &::before,
+          &::after {
+            background-color: #28332d;
+          }
+        }
+      }
+      &:active {
+        color: #242e29;
+        span {
+          border-color: rgba(#242e29, 0.2);
+          &::before,
+          &::after {
+            background-color: #242e29;
+          }
+        }
+      }
+    }
+    @include media-max($tablet) {
+      ._show-time & {
+        display: none;
+      }
+    }
+  }
+  &__confirm {
+    display: inline-block;
+    min-width: 160px;
+    padding: 23px 30px 22px;
+    background-color: $primary;
+    text-align: center;
+    color: $mainColor;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #28332d;
+      }
+    }
+    &:active {
+      background-color: #242e29;
+    }
+    &:disabled {
+      color: rgba($primary, 0.2);
+      background-color: #d8d8d8;
+    }
+
+    @include media-max($tablet) {
+      display: none;
+      ._show-time & {
+        display: block;
+      }
+    }
+    @include media-max($mobileSmall) {
+      font-size: 12px;
+      min-width: 130px;
+      padding: 15px 20px 14px;
+    }
+  }
+
+  &__choose-time {
+    display: none;
+    @include media-max($tablet) {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-left: 15px;
+        transform: rotate(180deg);
+        width: 6px;
+        height: 13px;
+      }
+      ._show-time & {
+        display: none;
+      }
+    }
+  }
+
+  &__back {
+    display: none;
+    @include media-max($tablet) {
+      svg {
+        margin-right: 15px;
+        width: 6px;
+        height: 13px;
+      }
+      ._show-time & {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+#book-popup .book {
+  position: static;
+  top: 0;
+  left: 0;
+}
+.calendar {
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__full-time {
+    font-size: 16px;
+    line-height: math.div(24, 16);
+    opacity: 0.8;
+  }
+
+  &__navigations {
+    display: flex;
+    column-gap: 30px;
+  }
+
+  &__nav-button {
+    &--prev {
+    }
+
+    &--next {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 13px 9px;
+    @include media-max($mobileSmall) {
+      gap: 8px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &__item-value {
+    font-size: 12px;
+    line-height: 2;
+    text-transform: uppercase;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    @include media-max($mobileSmall) {
+      font-size: 11px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__item--title &__item-value {
+    opacity: 0.8;
+    border-radius: 0;
+  }
+  &__item--empty &__item-value {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__item--past &__item-value {
+    opacity: 0.48;
+  }
+  &__item--booked &__item-value {
+    background-color: rgba($primary, 0.16);
+  }
+  &__item--available &__item-value {
+    cursor: pointer;
+    border: 1px solid rgba($primary, 0.48);
+  }
+
+  &__item input:focus ~ &__item-value {
+    border-color: $primary;
+  }
+  &__item input:checked ~ &__item-value {
+    color: $mainColor;
+    border-color: $primary;
+    background-color: $primary;
+  }
+}
+.time {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item-value {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px 9px 9px;
+    border: 1px solid rgba($primary, 0.24);
+    width: 100%;
+    height: 100%;
+    ._disabled & {
+      opacity: 0.48;
+      border: none;
+    }
+  }
+
+  &__item input:disabled ~ &__item-value {
+    text-transform: uppercase;
+    opacity: 0.48;
+    border: none;
+  }
+
+  &__item input:focus ~ &__item-value {
+    border-color: $primary;
+  }
+  &__item input:checked ~ &__item-value {
+    // &__item input[checked='true'] ~ &__item-value {
+    color: $mainColor;
+    border-color: $primary;
+    background-color: $primary;
+  }
+}
+
+//========================================================================================================================================================
+.custom-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  @include media-min($pc) {
+    padding: 48px;
+  }
+  span {
+    font-size: 12px;
+    line-height: math.div(20, 12);
+    font-weight: 500;
+    text-transform: uppercase;
+    @include media-min($pc) {
+      font-size: 16px;
+      line-height: math.div(20, 16);
+    }
+  }
+  svg {
+    margin-left: 10px;
+    @include media-max($pc) {
+      height: 8px;
+      width: 19px;
+    }
+  }
+}

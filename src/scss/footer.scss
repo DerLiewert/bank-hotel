@@ -1,0 +1,152 @@
+//====================================================================================================
+.footer {
+  &__inner {
+    padding: 50px 0;
+    border-top: 1px solid rgba($primary, 0.34);
+
+    @include media-min($mobile) {
+      display: flex;
+      column-gap: 70px;
+    }
+    @include media-min($tablet) {
+      column-gap: 130px;
+      padding: 70px 0;
+    }
+    @include media-min($pc) {
+      column-gap: 188px;
+      padding: 100px 0;
+    }
+  }
+
+  &__column {
+    @include media-min($mobile) {
+      display: flex;
+      flex-direction: column;
+      &:not(:last-child) {
+        flex-basis: 250px;
+        @include media-min($pc) {
+          flex-basis: 285px;
+        }
+      }
+    }
+
+    @include media-max($mobile) {
+      &:first-child * {
+        display: none;
+      }
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: math.div(22, 18);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    &::before {
+      content: '/';
+      color: $secondary;
+    }
+
+    @include media-min($pc) {
+      font-size: 26px;
+      line-height: math.div(31, 26);
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: math.div(23, 13);
+    opacity: 0.8;
+    margin-bottom: 24px;
+
+    @include media-min($pc) {
+      font-size: 16px;
+      line-height: math.div(28, 16);
+      margin-bottom: 30px;
+    }
+  }
+
+  &__copy {
+    font-size: 14px;
+    line-height: math.div(24, 14);
+    opacity: 0.32;
+    margin-top: auto;
+    @include media-max($mobile) {
+      display: block !important;
+      text-align: center;
+      opacity: 1;
+    }
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__input {
+    font-size: 12px;
+    line-height: math.div(20, 12);
+    text-transform: uppercase;
+    padding: 15px 64px 14px 20px;
+    border: 1px solid $primary;
+    opacity: 0.64;
+    outline: none;
+    background-color: $mainColor;
+    transition: opacity 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
+
+    @include media-min($pc) {
+      font-size: 16px;
+      line-height: math.div(20, 16);
+      padding: 20px 20px 19px;
+    }
+  }
+  &__submit {
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translate3d(0, -50%, 0);
+    img {
+      width: 31px;
+      height: 17px;
+      object-fit: contain;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 50px;
+    @include media-max($pc) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: math.div(20, 16);
+    font-weight: 500;
+    text-transform: uppercase;
+    @media (any-hover: hover) {
+      transition: color 0.3s ease 0s;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+//====================================================================================================

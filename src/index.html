@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"BankHotel" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <section class="intro" data-watch-parent data-watch data-watch-once>
+          <div class="container">
+            <div class="intro__info">
+              <div class="intro__info-left">
+                <h1 class="intro__title">Bank<span>Hotel</span></h1>
+                <ul class="intro__list">
+                  <li>rooms</li>
+                  <li>restaurant</li>
+                  <li>congress hall</li>
+                  <li>wine bar</li>
+                </ul>
+              </div>
+              <div class="intro__info-right">
+                <div class="intro__info-top">
+                  <div class="intro__tag">since 1973</div>
+                  <a href="#" class="intro__arrow" data-goto=".about"></a>
+                </div>
+                <p class="intro__text">
+                  The luxurious hotel in the most beautiful European city with an exclusive
+                  restaurant, conference-hall, and art-bar.
+                </p>
+              </div>
+            </div>
+            <div class="intro__image-block">
+              <div class="intro__form-wrapper" data-book="intro">
+                <form action="#" class="intro__form intro-form">
+                  <div class="intro-form__body">
+                    <div class="intro-form__date-field" data-book-from>
+                      <input
+                        class="hide-input"
+                        type="datetime-local"
+                        name="date-check-in"
+                        id="intro-check-in"
+                        tabindex="-1"
+                      />
+                      <button class="intro-form__custom-input custom-date" type="button">
+                        <span>Check in</span>
+                        <svg
+                          width="20"
+                          height="12"
+                          viewBox="0 0 20 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                            stroke="#FCD043"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="intro-form__date-field" data-book-to>
+                      <input
+                        class="hide-input"
+                        type="datetime-local"
+                        name="date-check-out"
+                        id="intro-check-out"
+                        tabindex="-1"
+                      />
+                      <button class="intro-form__custom-input custom-date" type="button">
+                        <span>Check out</span>
+                        <svg
+                          width="20"
+                          height="12"
+                          viewBox="0 0 20 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                            stroke="#FCD043"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <button type="submit" class="intro-form__button">book room</button>
+                  </div>
+                </form>
+              </div>
+              <a class="book-btn intro__book-btn" href="#" data-popup="#form-book-popup"
+                >Book room</a
+              >
+              <!-- <a class="book-btn intro__book-btn" href="#" data-book-for="intro">Book room</a> -->
+            </div>
+            <div class="intro__bottom" data-watch data-watch-margin="-40px" data-watch-once>
+              <div class="intro__contacts">
+                <a href="tel:+380322975020" class="intro__contact intro__contact--call"
+                  >+38 032 297 50 20</a
+                >
+                <a
+                  class="intro__contact intro__contact--address"
+                  target="_blank"
+                  href="https://maps.google.com/?q=вулиця Листопадового Чину, 8, Lviv, Lviv Oblast, Ukraine, 79000"
+                  rel="noreferrer"
+                >
+                  8 Lystopadovoho Chynu,Lviv
+                </a>
+              </div>
+              <p class="intro__label">
+                Art & Congress<br />
+                <span>hall</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="about" data-watch-parent data-prlx-parent>
+          <div class="about__bg-decor about__bg-decor--horizontal"></div>
+          <div class="about__bg-decor about__bg-decor--vertical"></div>
+          <div class="about__bg-decor about__bg-decor--circle"></div>
+          <div class="container">
+            <div class="about__inner">
+              <div class="about__body">
+                <h2
+                  class="about__title title"
+                  data-watch
+                  data-watch-margin="-100px"
+                  data-watch-once
+                >
+                  <span>About</span><br />
+                  US
+                </h2>
+                <div class="about__main-image">
+                  <img src="@img/about/01.jpeg" alt="Image" data-prlx data-coefficient="5.5" />
+                </div>
+                <div class="about__content" data-watch data-watch-once>
+                  <h3 class="about__sub-title title-small">High quality</h3>
+                  <p class="about__text text">
+                    The five-star Bank Hotel was reopened to visitors in 2016. The building was
+                    renovated and modernized to meet the expectations of the most demanding guests.
+                    We offer luxurious rooms, numerous facilities, and exceptional service.
+                  </p>
+                </div>
+              </div>
+              <div class="about__right" data-prlx-parent>
+                <div class="about__secondary-image" data-prlx data-coefficient="2.5">
+                  <img
+                    class="about__decor"
+                    src="@img/about/decor.svg"
+                    alt="premium rooms. bank hotel"
+                  />
+                  <img src="@img/about/02.jpeg" alt="Image" />
+                </div>
+                <a href="#" class="about__btn" data-goto=".rooms">
+                  <p class="about__btn-text">
+                    <span>Rooms</span><br />
+                    and<br />
+                    apartments
+                  </p>
+                  <img class="about__btn-arrow" src="@img/icons/arrow.svg" alt="Arrow down" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="rooms _white-block" data-watch-parent="rooms">
+          <div class="container">
+            <div class="rooms__inner">
+              <div class="rooms__top" data-watch data-watch-margin="-100px" data-watch-once>
+                <h2 class="rooms__title title">
+                  Rooms<br />
+                  & apartments
+                </h2>
+                <p class="rooms__text">
+                  All room decoration was made with ecological certified and safe materials.
+                </p>
+              </div>
+              <div class="rooms__slider swiper">
+                <div class="rooms__wrapper swiper-wrapper">
+                  <div class="rooms__slide swiper-slide rooms-slide">
+                    <div class="rooms-slide__right" data-prlx-parent-slide>
+                      <div class="rooms-slide__main-image" data-prlx data-coefficient="8">
+                        <img src="@img/rooms/main-01.jpeg" alt="Image" />
+                        <a
+                          class="book-btn rooms-slide__book-btn"
+                          href="#"
+                          data-popup="#form-book-popup"
+                          >Book room</a
+                        >
+                      </div>
+                    </div>
+                    <div class="rooms-slide__body">
+                      <div class="rooms-slide__second-image" data-prlx-parent-slide>
+                        <img
+                          src="@img/rooms/secondary-01.jpeg"
+                          alt="Image"
+                          data-watch
+                          data-prlx
+                          data-coefficient="2.5"
+                        />
+                      </div>
+                      <div
+                        class="rooms-slide__tag"
+                        data-watch
+                        data-watch-margin="-20px"
+                        data-watch-once
+                      >
+                        since 1973
+                      </div>
+                      <div
+                        class="rooms-slide__content"
+                        data-watch
+                        data-watch-margin="-40px"
+                        data-watch-once
+                      >
+                        <h3 class="rooms-slide__title title-small">Superior twin</h3>
+                        <div class="rooms-slide__text text">
+                          <p>
+                            The Superior twin is perfect for those who plan to stay long. The
+                            spacious and bright room is equipped with deluxe Italian furniture and
+                            has a beautiful view to the historical part of the city. Stylish
+                            interior design and comfortable beds will make your stay cozy and
+                            pleasant.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rooms__slide swiper-slide rooms-slide">
+                    <div class="rooms-slide__right" data-prlx-parent-slide>
+                      <div class="rooms-slide__main-image" data-prlx data-coefficient="8">
+                        <img src="@img/rooms/main-02.jpeg" alt="Image" />
+                        <a
+                          class="book-btn rooms-slide__book-btn"
+                          href="#"
+                          data-popup="#form-book-popup"
+                          >Book room</a
+                        >
+                      </div>
+                    </div>
+                    <div class="rooms-slide__body">
+                      <div class="rooms-slide__second-image" data-prlx-parent-slide>
+                        <img
+                          src="@img/rooms/secondary-02.jpeg"
+                          alt="Image"
+                          data-watch
+                          data-prlx
+                          data-coefficient="2.5"
+                        />
+                      </div>
+                      <div
+                        class="rooms-slide__tag"
+                        data-watch
+                        data-watch-margin="-20px"
+                        data-watch-once
+                      >
+                        since 1973
+                      </div>
+                      <div
+                        class="rooms-slide__content"
+                        data-watch
+                        data-watch-margin="-40px"
+                        data-watch-once
+                      >
+                        <h3 class="rooms-slide__title title-small">Lorem ipsum dolor sit amet.</h3>
+                        <div class="rooms-slide__text text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
+                            vitae nemo magni minima, quod accusantium voluptatum inventore iure
+                            labore eum?
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rooms__slide swiper-slide rooms-slide">
+                    <div class="rooms-slide__right" data-prlx-parent-slide>
+                      <div class="rooms-slide__main-image" data-prlx data-coefficient="8">
+                        <img src="@img/rooms/main-03.jpg" alt="Image" />
+                        <a
+                          class="book-btn rooms-slide__book-btn"
+                          href="#"
+                          data-popup="#form-book-popup"
+                          >Book room</a
+                        >
+                      </div>
+                    </div>
+                    <div class="rooms-slide__body">
+                      <div class="rooms-slide__second-image" data-prlx-parent-slide>
+                        <img
+                          src="@img/rooms/secondary-03.jpeg"
+                          alt="Image"
+                          data-watch
+                          data-prlx
+                          data-coefficient="2.5"
+                        />
+                      </div>
+                      <div
+                        class="rooms-slide__tag"
+                        data-watch
+                        data-watch-margin="-20px"
+                        data-watch-once
+                      >
+                        since 1973
+                      </div>
+                      <div
+                        class="rooms-slide__content"
+                        data-watch
+                        data-watch-margin="-40px"
+                        data-watch-once
+                      >
+                        <h3 class="rooms-slide__title title-small">Lorem, ipsum dolor.</h3>
+                        <div class="rooms-slide__text text">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+                            reprehenderit totam asperiores, commodi ipsum illo sapiente soluta at.
+                            Deserunt soluta nihil corrupti. Provident molestias adipisci dignissimos
+                            veniam illo laborum atque? Laborum fugiat architecto, quibusdam ab
+                            accusamus commodi optio. Nobis, culpa nesciunt pariatur soluta quae
+                            tempora beatae ut quas. Laboriosam, molestias exercitationem officiis
+                            quos repellat, odio sunt facilis ea pariatur nam ipsa cupiditate earum
+                            fugit nihil error facere, qui minima perferendis obcaecati? Quidem at
+                            hic vitae? Debitis officiis, illo esse repellendus quibusdam, iure eaque
+                            alias tempora saepe recusandae in eos mollitia cupiditate. Eveniet
+                            aspernatur ab ex a. Voluptatibus aliquam tempore quos.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="rooms__next">
+                  <img src="@img/icons/long-arrow.svg" alt="Next" />
+                </button>
+                <div class="rooms__pagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="facilities _white-block" data-watch-parent>
+          <div class="container">
+            <div class="facilities__top">
+              <div class="facilities__top-inner">
+                <div class="facilities__label" data-watch data-watch-once>Art & Congress hall</div>
+                <h2 class="facilities__title title" data-watch data-watch-once>
+                  Our<br />
+                  faci<br />
+                  <span>lities</span>
+                </h2>
+                <div class="facilities__image facilities__image--left" data-prlx-parent>
+                  <div class="facilities__image-wrapper" data-prlx data-coefficient="6">
+                    <img src="@img/facilities/left.jpeg" alt="image" />
+                  </div>
+                </div>
+                <div class="facilities__image facilities__image--right" data-prlx-parent>
+                  <div class="facilities__image-wrapper" data-prlx data-coefficient="2">
+                    <img src="@img/facilities/right.jpeg" alt="image" />
+                  </div>
+                </div>
+                <p class="facilities__text" data-watch data-watch-once data-watch-margin="-50px">
+                  Bank Hotel offers you a wide range of additional services and facilities. Visit
+                  our restaurant to try exclusive meals, book a conference hall to organize a
+                  business meeting, or relax in the art-bar.
+                </p>
+              </div>
+            </div>
+            <ul class="facilities__items">
+              <li class="facilities__item facilities-item" data-open>
+                <div class="facilities-item__inner">
+                  <div class="facilities-item__image" data-prlx-parent-custom>
+                    <img
+                      src="@img/facilities/01.jpeg"
+                      alt="Ice restaurant"
+                      data-prlx
+                      data-coefficient="3"
+                    />
+                  </div>
+                  <button class="facilities-item__arrow arrow-btn">
+                    <img src="@img/icons/long-arrow.svg" alt="Next" />
+                  </button>
+                  <div class="facilities-item__body">
+                    <div
+                      class="facilities-item__num"
+                      data-watch-custom
+                      data-watch-margin="-20px"
+                      data-watch-once
+                    ></div>
+                    <div
+                      class="facilities-item__content"
+                      data-watch-custom
+                      data-watch-margin="-40px"
+                      data-watch-once
+                    >
+                      <h3 class="facilities-item__title">Ice restaurant</h3>
+                      <div class="facilities-item__text text">
+                        <p>
+                          The hotel’s exclusive infrastructure is complemented by the unique
+                          atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and
+                          live music will set you for the correct mood.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="facilities__item facilities-item">
+                <div class="facilities-item__inner">
+                  <div class="facilities-item__image" data-prlx-parent-custom>
+                    <img
+                      src="@img/facilities/02.jpeg"
+                      alt="conference hall"
+                      data-prlx
+                      data-coefficient="3"
+                    />
+                  </div>
+
+                  <button class="facilities-item__arrow arrow-btn">
+                    <img src="@img/icons/long-arrow.svg" alt="Next" />
+                  </button>
+                  <div class="facilities-item__body">
+                    <div
+                      class="facilities-item__num"
+                      data-watch-custom
+                      data-watch-margin="-20px"
+                      data-watch-once
+                    ></div>
+                    <div
+                      class="facilities-item__content"
+                      data-watch-custom
+                      data-watch-margin="-40px"
+                      data-watch-once
+                    >
+                      <h3 class="facilities-item__title">conference hall</h3>
+                      <div class="facilities-item__text text">
+                        <p>
+                          The hotel’s exclusive infrastructure is complemented by the unique
+                          atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and
+                          live music will set you for the correct mood. The hotel’s exclusive
+                          infrastructure is complemented by the unique atmosphere of the Safe
+                          Restaurant. Author’s menu, extensive wine card, and live music will set
+                          you for the correct mood.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="facilities__item facilities-item">
+                <div class="facilities-item__inner">
+                  <div class="facilities-item__image" data-prlx-parent-custom>
+                    <img
+                      src="@img/facilities/03.jpeg"
+                      alt="Wine bar “reserve”"
+                      data-prlx
+                      data-coefficient="3"
+                    />
+                  </div>
+
+                  <button class="facilities-item__arrow arrow-btn">
+                    <img src="@img/icons/long-arrow.svg" alt="Next" />
+                  </button>
+                  <div class="facilities-item__body">
+                    <div
+                      class="facilities-item__num"
+                      data-watch-custom
+                      data-watch-margin="-20px"
+                      data-watch-once
+                    ></div>
+                    <div
+                      class="facilities-item__content"
+                      data-watch-custom
+                      data-watch-margin="-40px"
+                      data-watch-once
+                    >
+                      <h3 class="facilities-item__title">Wine bar “reserve”</h3>
+                      <div class="facilities-item__text text">
+                        <p>
+                          The hotel’s exclusive infrastructure is complemented by the unique
+                          atmosphere of the Safe Restaurant. Author’s menu, extensive wine card, and
+                          live music will set you for the correct mood. The hotel’s exclusive
+                          infrastructure is complemented by the unique atmosphere of the Safe
+                          Restaurant. Author’s menu, extensive wine card, and live music will set
+                          you for the correct mood. The hotel’s exclusive infrastructure is
+                          complemented by the unique atmosphere of the Safe Restaurant. Author’s
+                          menu, extensive wine card, and live music will set you for the correct
+                          mood.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="best" data-watch-parent>
+          <div class="best__inner">
+            <div class="container">
+              <h2 class="best__title title" data-watch data-watch-once>
+                <span>Best apartments</span>
+              </h2>
+            </div>
+            <div class="best__decor"></div>
+            <div class="container">
+              <p class="best__text" data-watch data-watch-once>
+                All room decoration was made with ecological certified and safe materials.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery" data-watch-parent>
+          <div class="container">
+            <div class="gallery__inner">
+              <h2 class="gallery__title title" data-watch data-watch-once>
+                <span>our Gallery</span>
+              </h2>
+              <div class="gallery__content" data-prlx-parent>
+                <p class="gallery__top-text" data-watch data-watch-once>
+                  Explore our spacious rooms with the gorgeous view to the historical part of the
+                  city. Each room has an exclusive interior design decorated with modern art pieces
+                  that will make your stay unforgettable.
+                </p>
+                <div class="gallery__images">
+                  <div class="gallery__image gallery__image--1">
+                    <img src="@img/gallery/01.jpeg" alt="Image" />
+                  </div>
+                  <div class="gallery__image gallery__image--2">
+                    <img src="@img/gallery/02.jpeg" alt="Image" data-prlx data-coefficient="4" />
+                  </div>
+                  <div class="gallery__image gallery__image--3">
+                    <img src="@img/gallery/03.jpeg" alt="Image" data-prlx data-coefficient="8" />
+                  </div>
+                  <div class="gallery__image gallery__image--4">
+                    <img src="@img/gallery/04.jpeg" alt="Image" data-prlx data-coefficient="2.5" />
+                  </div>
+                  <div class="gallery__image gallery__image--5">
+                    <img src="@img/gallery/05.jpeg" alt="Image" data-prlx data-coefficient="2" />
+                  </div>
+                </div>
+                <p class="gallery__bottom-text">
+                  It is our pleasure to meet your most unrealistic expectations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery__line-text">
+            <p class="gallery__line-text-top">
+              <span>Bank hotel</span> <span>Bank hotel </span> <span>Bank hotel </span>
+              <span>Bank hotel</span> <span>Bank hotel </span> <span>Bank hotel </span
+              ><span>Bank hotel</span> <span>Bank hotel </span>
+              <span class="_opacity-1">Bank__hotel© </span> <span>Bank hotel</span>
+              <span>Bank hotel </span>
+              <span>Bank hotel </span><span>Bank hotel</span> <span>Bank hotel </span>
+              <span>Bank hotel </span><span>Bank hotel</span>
+            </p>
+            <p class="gallery__line-text-bottom">
+              <span>Bank hotel</span> <span>Bank hotel </span> <span>Bank hotel </span>
+              <span>Bank hotel</span> <span>Bank hotel </span> <span>Bank hotel </span>
+              <span>Bank hotel </span> <span>Bank hotel </span> <span>Bank hotel </span>
+              <span>Bank hotel </span> <span>Bank hotel</span> <span>Bank hotel </span>
+              <span>Bank hotel </span> <span>Bank hotel </span> <span>Bank hotel </span>
+              <span>Bank hotel </span> <span>Bank hotel </span>
+            </p>
+          </div>
+        </section>
+
+        <section class="contact _white-block" data-watch-parent data-prlx-parent>
+          <div class="container">
+            <div class="contact__inner">
+              <a class="contact__tell" href="tel:+380322975020" data-watch data-watch-once
+                >+38 032 297 50 20</a
+              >
+              <p class="contact__text contact__text--location" data-watch data-watch-once>
+                8 Lystopadovoho Chynu,Lviv
+              </p>
+
+              <h2 class="contact__title" data-watch data-watch-once><span>Get in</span> touch</h2>
+              <div class="contact__form-wrapper" data-book="contact">
+                <form action="#" class="contact__form contact-form">
+                  <div class="contact-form__body">
+                    <div class="contact-form__fields">
+                      <div class="contact-form__date-field" data-book-from>
+                        <input
+                          class="hide-input"
+                          type="datetime-local"
+                          name="date-check-in"
+                          id="contact-check-in"
+                          tabindex="-1"
+                        />
+                        <button class="contact-form__custom-input custom-date" type="button">
+                          <span>Check in</span>
+                          <svg
+                            width="20"
+                            height="12"
+                            viewBox="0 0 20 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                              stroke="#FCD043"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="contact-form__date-field" data-book-to>
+                        <input
+                          class="hide-input"
+                          type="datetime-local"
+                          name="date-check-out"
+                          id="contact-check-out"
+                          tabindex="-1"
+                        />
+                        <button class="contact-form__custom-input custom-date" type="button">
+                          <span>Check out</span>
+                          <svg
+                            width="20"
+                            height="12"
+                            viewBox="0 0 20 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                              stroke="#FCD043"
+                              stroke-width="2"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <button type="submit" class="contact-form__button">book room</button>
+                  </div>
+                </form>
+              </div>
+              <a
+                class="book-btn contact__button"
+                href="#"
+                data-book-for="contact"
+                data-popup="#form-book-popup"
+                >Book room</a
+              >
+            </div>
+            <div class="contact__image">
+              <img src="@img/contact/01.jpeg" alt="Image" data-prlx />
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>

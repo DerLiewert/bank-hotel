@@ -1,0 +1,3062 @@
+//====================================================================================================
+.intro {
+  padding: 10px 0 40px;
+  @include media-min($mobileSmall) {
+    padding-bottom: 35px;
+  }
+  @include media-min($tablet) {
+    padding-bottom: 75px;
+  }
+  @include media-min($pc) {
+    padding: 42px 0 82px;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    @include media-max(880px) {
+      text-align: center;
+    }
+    @include media-min(880px) {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 75px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 60px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 95px;
+    }
+  }
+
+  &__info-left {
+    @include media-max(880px) {
+      position: relative;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      &::after {
+        content: '';
+        width: 40%;
+        height: 1px;
+        background-color: rgba($mainColor, 0.12);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+    @include media-max($mobile) {
+      &::after {
+        width: 48.735%;
+      }
+    }
+  }
+
+  &__title {
+    font-family: Miracle;
+    font-size: 65px;
+    margin-bottom: 35px;
+    span {
+      color: $secondary;
+    }
+
+    @include media-min($mobileMini) {
+      font-size: 80px;
+    }
+    @include media-min($mobileSmall) {
+      font-size: 100px;
+    }
+    @include media-min($mobile) {
+      font-size: 120px;
+    }
+    @include media-min($tablet) {
+      font-size: 140px;
+      margin-bottom: 45px;
+    }
+    @include media-min(1240px) {
+      font-size: 170px;
+      margin-bottom: 50px;
+    }
+    @include media-min($pc) {
+      font-size: 220px;
+      margin-bottom: 55px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(-70%, 0, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(-70%, 0, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0.1s,
+        transform 0.6s ease 0.1s;
+    }
+
+    @include media-max(880px) {
+      justify-content: center;
+    }
+
+    li {
+      font-size: 10px;
+      line-height: math.div(31, 24);
+      text-transform: uppercase;
+      color: $secondary;
+      &:not(:last-child) {
+        margin-right: 4px;
+        @include media-min($mobileMini) {
+          margin-right: 6px;
+        }
+        @include media-min($tablet) {
+          margin-right: 7px;
+        }
+        @include media-min($pc) {
+          margin-right: 8px;
+        }
+        &::after {
+          content: '//';
+          display: inline-block;
+          margin-left: 4px;
+          @include media-min($mobileMini) {
+            margin-left: 6px;
+          }
+          @include media-min($tablet) {
+            margin-left: 7px;
+          }
+          @include media-min($pc) {
+            margin-left: 8px;
+          }
+        }
+      }
+      @include media-min($mobileMini) {
+        font-size: 12px;
+      }
+      @include media-min($mobileSmall) {
+        font-size: 14px;
+      }
+      @include media-min($tablet) {
+        font-size: 18px;
+      }
+      @include media-min($pc) {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__info-right {
+    width: 100%;
+
+    @include media-between(880px, $tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding-right: 30px;
+    }
+    @include media-min(880px) {
+      max-width: 355px;
+      padding-top: 25px;
+    }
+    @include media-min($tablet) {
+      max-width: 450px;
+    }
+    @include media-min($pc) {
+      max-width: 560px;
+      padding-top: 45px;
+    }
+  }
+
+  &__info-top {
+    display: none;
+    @include media-min(880px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 65px;
+    }
+    @include media-min(1240px) {
+      margin-bottom: 95px;
+    }
+  }
+
+  &__tag {
+    display: none;
+    @include media-min($tablet) {
+      display: inline-flex;
+      align-items: center;
+      font-size: 22px;
+      line-height: math.div(26, 22);
+      text-transform: capitalize;
+      padding: 17px 50px 16px 30px;
+      border: 1px solid rgba($mainColor, 0.32);
+      border-radius: 99px;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 23px;
+        background: url('@img/icons/star.svg') center no-repeat;
+        background-size: contain;
+      }
+
+      .watcher & {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      ._watcher-view & {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+          opacity 0.6s ease 0.3s,
+          transform 0.6s ease 0.3s;
+      }
+    }
+  }
+
+  &__arrow {
+    display: none;
+    @include media-min(880px) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      clip-path: polygon(50% -1%, 86% 14%, 101% 50%, 86% 86%, 50% 101%, 14% 86%, -1% 50%, 14% 14%);
+      position: relative;
+      outline: none;
+
+      .watcher & {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      ._watcher-view & {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+          opacity 0.5s ease 0.3s,
+          transform 0.5s ease 0.3s;
+      }
+
+      &::after {
+        content: '';
+        width: 16px;
+        height: 8px;
+        background: url('@img/icons/arrow.svg') center no-repeat;
+        background-size: contain;
+        margin-top: 5px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@img/icons/polygon.svg') center no-repeat;
+        background-size: contain;
+        opacity: 0.33;
+        transition: opacity 0.3s ease 0s;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          &::before {
+            opacity: 0.64;
+          }
+        }
+      }
+      &:not(:hover):focus {
+        &::before {
+          animation: 0.8s linear 0s infinite alternate focus;
+        }
+      }
+      &:active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    @include media-min($tablet) {
+      width: 70px;
+      height: 70px;
+      ._watcher-view & {
+        transition-delay: 0.5s;
+      }
+    }
+  }
+
+  &__text {
+    opacity: 0.8;
+    max-width: 350px;
+    line-height: math.div(28, 18);
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(40%, 0, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0.1s,
+        transform 0.6s ease 0.1s;
+    }
+    @include media-max($pc) {
+      font-size: 16px;
+    }
+    @include media-max($tablet) {
+      max-width: 200px;
+      font-size: 13px;
+    }
+    @include media-max(880px) {
+      width: 90%;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+
+  &__image-block {
+    min-height: 425px;
+    padding-top: 39.5%;
+    margin-bottom: 35px;
+    background: url('@img/intro-bg.jpeg') center 82% no-repeat;
+    background-size: cover;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include media-min($mobileSmall) {
+      margin-bottom: 45px;
+    }
+    @include media-min($mobile) {
+      margin-bottom: 50px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 75px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__book {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    @include media-min($pc) {
+      bottom: unset;
+      top: 0;
+    }
+
+    // @include media-max($tablet) {
+    //   display: none;
+    //   &._show {
+    //     display: flex;
+    //   }
+    //   position: fixed;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 100;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    //   background-color: rgba(#fff, 0.7);
+    // }
+  }
+  &__form-wrapper {
+    @include media-max($tablet) {
+      display: none;
+      &._show {
+        display: block;
+      }
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 900;
+      padding: 50px 0;
+      overflow: auto;
+      background-color: rgba(#fff, 0.7);
+    }
+    @include media-min($tablet) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+    @include media-min($pc) {
+      bottom: unset;
+      top: 0;
+    }
+  }
+
+  &__bottom {
+    font-size: 24px;
+    line-height: math.div(31, 26);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px 100px;
+
+    @include media-min(1240px) {
+      font-size: 26px;
+    }
+  }
+
+  &__contacts {
+    display: none;
+    @include media-min($mobileSmall) {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      font-size: 18px;
+    }
+  }
+
+  &__contact {
+    text-decoration-line: underline;
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+    }
+
+    & + & {
+      margin-top: 14px;
+    }
+
+    &--call {
+      color: $secondary;
+    }
+
+    &--address {
+      ._watcher-view & {
+        transition-delay: 0.15s;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    span {
+      font-style: italic;
+    }
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+    @include media-min($mobileSmall) {
+      font-size: 16px;
+      text-align: right;
+      margin-left: auto;
+      .watcher & {
+        transform: translate3d(0, 35px, 0);
+      }
+    }
+  }
+
+  &__contacts,
+  &__label {
+    @include media-min($tablet) {
+      font-size: 24px;
+    }
+    @include media-min(1240px) {
+      font-size: 26px;
+    }
+  }
+
+  &__bottom._watcher-view & {
+    &__contact,
+    &__label {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &__contact {
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+
+    &__label {
+      transition:
+        opacity 0.8s ease 0.05s,
+        transform 0.8s ease 0.05s;
+    }
+  }
+
+  &__book-btn {
+    @include media-max($tablet) {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    @include media-min($tablet) {
+      display: none;
+    }
+  }
+}
+.intro-form {
+  @include media-max($tablet) {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: 100px;
+    @include media-min($pc) {
+      min-height: 125px;
+    }
+    @include media-min($largePc) {
+      min-height: 150px;
+    }
+    @include media-max($tablet) {
+      max-width: 305px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__date-field,
+  &__button {
+    width: 100%;
+    max-width: 305px;
+    @include media-min($pc) {
+      max-width: 370px;
+    }
+  }
+
+  &__date-field {
+    position: relative;
+    & + & {
+      &::before {
+        content: '';
+        height: 42.7%;
+        width: 1px;
+        background-color: rgba($mainColor, 0.24);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 0);
+        @include media-max($tablet) {
+          height: 1px;
+          width: calc(100% - 30px * 2);
+          left: 50%;
+          top: 0;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+    }
+  }
+  &__custom-input {
+    height: 100%;
+    width: 100%;
+    background-color: rgba($primary, 0.48);
+    @include media-max($tablet) {
+      background-color: rgba($primary, 0.8);
+    }
+  }
+
+  &__date-field._open-book &__custom-input {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__button {
+    font-size: 14px;
+    line-height: math.div(20, 14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $darkColor;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $secondary;
+    padding: 35px;
+    @include media-min($pc) {
+      font-size: 18px;
+      line-height: math.div(20, 18);
+      padding: 48px;
+    }
+  }
+}
+
+//====================================================================================================
+.about {
+  padding: 50px 0 70px;
+  position: relative;
+  overflow: hidden;
+  @include media-min($mobileSmall) {
+    padding-top: 70px;
+  }
+  @include media-min($tablet) {
+    padding: 100px 0 200px;
+  }
+  @include media-min($pc) {
+    padding: 125px 0 250px;
+  }
+  @include media-min($largePc) {
+    padding: 150px 0 300px;
+  }
+
+  &__bg-decor {
+    position: absolute;
+    &--horizontal {
+      top: 0;
+      left: 37.3%;
+      width: 100%;
+      height: 1px;
+      background-color: rgb(63, 81, 72);
+      @include media-min($largePc) {
+        left: calc((50% + 445px) / 2);
+      }
+    }
+    &--vertical {
+      top: 0;
+      right: 26.7%;
+      width: 1px;
+      height: 50%;
+      background-color: rgb(63, 81, 72);
+      @include media-min($tablet) {
+        height: 100%;
+      }
+      @include media-min($largePc) {
+        right: calc(50% - 447px);
+      }
+    }
+    &--circle {
+      top: 0;
+      left: 0;
+      width: 73.1%;
+      padding-top: 73.1%;
+      border-top: 1px solid rgb(63, 81, 72);
+      border-left: 1px solid rgb(63, 81, 72);
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-radius: 50%;
+      transform: rotate(45deg) translate3d(0, -0.7px, 0);
+
+      @include media-min($largePc) {
+        width: calc(50% + 445px);
+        padding-top: calc(50% + 445px);
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+
+    @include media-min($tablet) {
+      min-height: 530px;
+    }
+    @include media-min($pc) {
+      min-height: 635px;
+    }
+    @include media-min($largePc) {
+      min-height: 850px;
+    }
+  }
+
+  &__body {
+    @include media-min($tablet) {
+      max-width: 628px;
+      padding-top: 50px;
+      padding-right: 54px;
+      margin: 0 auto;
+      & > * {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    @include media-min($pc) {
+      max-width: 594px;
+    }
+    @include media-min($largePc) {
+      padding-top: 160px;
+      max-width: 700px;
+      padding-right: 0;
+      padding-left: 200px;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    text-align: right;
+    margin-bottom: 70px;
+    @include media-min($mobileSmall) {
+      margin-left: 10vw;
+    }
+    @include media-min($mobile) {
+      margin-left: 17vw;
+    }
+    @include media-min($tablet) {
+      margin-left: 0;
+      margin-bottom: 119px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 126px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 189px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: scale(1);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 1s ease 0s;
+    }
+  }
+
+  &__main-image {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include media-max($tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @include media-max($tablet) {
+      margin-bottom: 70px;
+      height: 100vw;
+      max-height: 600px;
+    }
+    @include media-min($tablet) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 357px;
+      height: 530px;
+      z-index: 1;
+    }
+    @include media-min($pc) {
+      width: 453px;
+      height: 635px;
+    }
+    @include media-min($largePc) {
+      width: 606px;
+      height: 850px;
+    }
+  }
+
+  &__content {
+    max-width: 100%;
+    margin-left: auto;
+    @include media-min($tablet) {
+      max-width: 260px;
+    }
+    @include media-min($pc) {
+      max-width: 400px;
+    }
+    @include media-min($largePc) {
+      max-width: 444px;
+      margin-left: 0;
+    }
+  }
+
+  &__sub-title {
+    margin-bottom: 20px;
+    @include media-min($pc) {
+      margin-bottom: 40px;
+    }
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__text {
+    & + & {
+      margin-top: 10px;
+    }
+
+    @include media-max($tablet) {
+      position: relative;
+      padding-right: 60px;
+      &::before {
+        content: '';
+        width: 85px;
+        height: 85px;
+        position: absolute;
+        top: -65px;
+        right: 0;
+        background: url('@img/about/decor.svg') center no-repeat;
+        background-size: contain;
+        transform: rotate(90deg);
+      }
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0.15s,
+        transform 0.6s ease 0.15s;
+    }
+  }
+
+  &__right {
+    display: none;
+    @include media-min($tablet) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 15.72vw;
+    }
+    @include media-min($pc) {
+      width: 16.458vw;
+    }
+    @include media-min($largePc) {
+      width: 314px;
+    }
+  }
+
+  &__secondary-image {
+    margin-bottom: 160px;
+    img:not(.about__decor) {
+      @include media-min($tablet) {
+        width: 100%;
+        height: 20.7vw;
+        object-fit: cover;
+      }
+      @include media-min($pc) {
+        height: 21.666vw;
+      }
+      @include media-min($largePc) {
+        height: 414px;
+      }
+    }
+  }
+
+  &__decor {
+    @include media-min($tablet) {
+      width: 8.3vw;
+      height: 8.3vw;
+      top: 1.7578vw;
+      left: 1.7578vw;
+      position: absolute;
+      transform: translate3d(-100%, -100%, 0);
+    }
+    @include media-min($pc) {
+      width: 7.986vw;
+      height: 6.736vw;
+      top: 1.597vw;
+      left: 2.777vw;
+    }
+    @include media-min($largePc) {
+      width: 144px;
+      height: 147px;
+      top: 30px;
+      left: 34px;
+    }
+  }
+
+  &__btn {
+    @include media-min($tablet) {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 130px;
+      height: 130px;
+      margin-left: 15px;
+      outline: none;
+      clip-path: polygon(
+        50% -0.5%,
+        80% 9%,
+        98% 34%,
+        98% 66%,
+        80% 91%,
+        50% 100.5%,
+        20% 91%,
+        2% 66%,
+        2% 34%,
+        20% 9%
+      );
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@img/icons/polygon-10.svg') center no-repeat;
+        background-size: contain;
+        opacity: 0.33;
+        transition: opacity 0.3s ease 0s;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          &::before {
+            opacity: 0.64;
+          }
+        }
+      }
+      &:not(:hover):focus {
+        &::before {
+          animation: 0.8s linear 0s infinite alternate focus;
+        }
+      }
+      &:active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    @include media-min($pc) {
+      width: 150px;
+      height: 150px;
+    }
+    @include media-min($largePc) {
+      width: 200px;
+      height: 200px;
+      margin-left: 28px;
+    }
+  }
+
+  &__btn-text {
+    width: fit-content;
+    font-size: 12px;
+    line-height: math.div(17, 14);
+    text-align: center;
+    span {
+      display: inline-block;
+      width: 100%;
+      color: $secondary;
+      font-style: italic;
+      text-align: left;
+      margin-left: 8px;
+    }
+    @include media-min($pc) {
+      font-size: 14px;
+    }
+  }
+
+  &__btn-text + &__btn-arrow {
+    margin-top: 14px;
+    @include media-min($pc) {
+      margin-top: 22px;
+    }
+    @include media-min($largePc) {
+      margin-top: 35px;
+    }
+  }
+}
+
+//========================================================================================================================================================
+.rooms {
+  &__inner {
+    border-bottom: 1px solid rgba($primary, 0.24);
+    padding: 70px 0;
+    @include media-min($mobile) {
+      padding: 90px 0;
+    }
+    @include media-min($tablet) {
+      padding: 124px 0 150px;
+    }
+    @include media-min($pc) {
+      padding-top: 250px;
+    }
+    @include media-min($largePc) {
+      padding-top: 300px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 50px;
+    @include media-min($tablet) {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 30px;
+      margin-bottom: 145px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @include media-min(360px) {
+      margin-bottom: 50px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 0;
+    }
+    @include media-between($tablet, $pc) {
+      margin-top: 76px;
+    }
+
+    @include media-max($mobile) {
+      br {
+        display: none;
+      }
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: scale(1);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: math.div(14, 12);
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 50%;
+    min-width: 150px;
+
+    @include media-min($mobile) {
+      font-size: 16px;
+      line-height: math.div(19, 16);
+    }
+    @include media-min($tablet) {
+      max-width: 200px;
+    }
+    @include media-min($pc) {
+      max-width: 335px;
+      font-size: 18px;
+      line-height: math.div(22, 18);
+    }
+    @include media-max($pc) {
+      margin-right: 30px;
+    }
+    @include media-min($largePc) {
+      max-width: 440px;
+      font-size: 26px;
+      line-height: math.div(31, 26);
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    ._watcher-view & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    &.swiper {
+      overflow: visible;
+    }
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__next {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    outline: none;
+    clip-path: polygon(
+      66% 2%,
+      91% 20%,
+      101% 50%,
+      91% 80%,
+      66% 98%,
+      34% 98%,
+      9% 80%,
+      -1% 50%,
+      9% 20%,
+      34% 2%
+    );
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('@img/icons/polygon-10-black.svg') center no-repeat;
+      background-size: contain;
+      opacity: 0.33;
+      transition: opacity 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover::before {
+        opacity: 0.75;
+      }
+    }
+
+    &:not(:hover):focus {
+      &::before {
+        animation: 0.8s linear 0s infinite alternate focus;
+      }
+    }
+
+    &:active::before {
+      opacity: 1;
+    }
+
+    img {
+      object-fit: contain;
+      width: 20px;
+      height: 20px;
+      @include media-min($mobile) {
+        width: 26px;
+        height: 20px;
+      }
+
+      @include media-min($pc) {
+        width: 42px;
+        height: 32px;
+      }
+    }
+
+    top: 30px;
+
+    @include media-min($mobileMini) {
+      width: 70px;
+      height: 70px;
+    }
+    @include media-min($mobile) {
+      width: 85px;
+      height: 85px;
+    }
+    @include media-min($tablet) {
+      width: 105px;
+      height: 105px;
+      top: 117px;
+    }
+
+    @include media-min($pc) {
+      top: unset;
+      bottom: 0;
+      width: 170px;
+      height: 170px;
+    }
+  }
+
+  &__pagination {
+    font-size: 16px;
+    line-height: math.div(26, 22);
+    position: absolute;
+    span {
+      opacity: 0.32;
+      &.swiper-pagination-current {
+        opacity: 1;
+      }
+      &.swiper-pagination-separator {
+        margin: 0 20px;
+        @include media-min($tablet) {
+          margin: 0 25px;
+        }
+        @include media-min($pc) {
+          margin: 0 30px;
+        }
+        @include media-min($largePc) {
+          margin: 0 35px;
+        }
+      }
+    }
+    @include media-max($tablet) {
+      right: 396px;
+    }
+    @include media-max($mobile) {
+      // top: 478px;
+      top: 468px;
+      right: 0;
+    }
+    @include media-min($mobile) {
+      bottom: 0;
+    }
+    @include media-min($tablet) {
+      font-size: 22px;
+      left: 220px;
+    }
+    @include media-min($pc) {
+      left: 24.5vw; //  355px;
+    }
+    @include media-min($largePc) {
+      left: 470px;
+    }
+  }
+}
+.rooms-slide {
+  $self: &;
+  @include media-min($mobile) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  &__right {
+    width: 100%;
+    height: 430px;
+    // position: relative;
+    @include media-max($mobile) {
+      margin-bottom: 97px;
+    }
+    @include media-min($mobile) {
+      flex-shrink: 0;
+      width: 356px; //572px;
+      height: 470px; //756px;
+    }
+    @include media-min($pc) {
+      width: 39.427vw; //572px;
+      height: 52.08vw; //756px;
+    }
+    @include media-min($largePc) {
+      width: 757px;
+      height: 1000px;
+    }
+  }
+
+  &__main-image {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__book-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    @include media-min($mobile) {
+      padding: 150px 0 70px;
+    }
+    @include media-min($tablet) {
+      padding: 117px 0 119px 220px;
+    }
+
+    @include media-min($pc) {
+      @include adaptiveValue('padding-top', 174, 50, 0, 1920, 1440);
+      padding-left: 24.5vw; //  355px;
+      padding-bottom: 125px;
+    }
+    @include media-min($largePc) {
+      padding: 174px 0 126px 470px;
+    }
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+  }
+
+  &__second-image {
+    @include media-max($pc) {
+      display: none;
+    }
+    @include media-min($pc) {
+      position: absolute;
+      left: 0;
+      @include adaptiveValue('top', 174, 50, 0, 1920, 1440);
+      width: 14.84vw; // 217px
+      height: 17.656vw; // 258px
+    }
+    @include media-min($largePc) {
+      top: 174px;
+      width: 285px;
+      height: 339px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__tag {
+    display: none;
+    @include media-min($pc) {
+      display: inline-flex;
+      align-items: center;
+      font-size: 22px;
+      line-height: math.div(26, 22);
+      text-transform: capitalize;
+      padding: 17px 50px 16px 30px;
+      border: 1px solid rgba($primary, 0.48);
+      border-radius: 99px;
+      margin-bottom: 70px;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 23px;
+        background: url('@img/icons/star.svg') center no-repeat;
+        background-size: contain;
+      }
+
+      .watcher & {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      &._watcher-view {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+          opacity 0.6s ease 0s,
+          transform 0.6s ease 0s;
+      }
+    }
+  }
+
+  &__bottom {
+  }
+
+  &__content {
+    @include media-min($mobile) {
+      max-width: 442px;
+      margin-top: auto;
+      margin-right: 50px;
+      padding-left: 0;
+    }
+    @include media-min($tablet) {
+      margin-right: 130px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 29px;
+    @include media-min($tablet) {
+      margin-bottom: 29px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    @include media-max($mobile) {
+      min-height: 70px;
+      padding-left: 134px;
+    }
+    @include media-max($mobileMini) {
+      padding-left: 100px;
+    }
+  }
+
+  &__title,
+  &__text p {
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+  }
+  @include media-max($mobile) {
+    .watcher &__title {
+      transform: translate3d(134px, 0, 0);
+    }
+  }
+  @include media-max($mobileMini) {
+    .watcher &__title {
+      transform: translate3d(100px, 0, 0);
+    }
+  }
+
+  #{$self} ._watcher-view & {
+    &__title,
+    &__text p {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-property: opacity, transform;
+      transition-timing-function: ease;
+      transition-duration: 0.6s;
+    }
+    &__text p {
+      transition-delay: 0.15s;
+    }
+  }
+}
+
+//========================================================================================================================================================
+.facilities {
+  $self: &;
+  padding: 70px 0;
+  @include media-min($mobile) {
+    padding: 90px 0;
+  }
+  @include media-min($tablet) {
+    padding: 100px 0 200px;
+  }
+  @include media-min($pc) {
+    padding: 150px 0 250px;
+  }
+  @include media-min($largePc) {
+    padding: 200px 0 300px;
+  }
+
+  &__top {
+    position: relative;
+    min-height: 300px;
+    margin-bottom: 70px;
+    @include media-min($mobile) {
+      margin-bottom: 90px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 100px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 150px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__top-inner {
+    width: 100%;
+    @include media-min($tablet) {
+      max-width: 650px;
+      margin: 0 auto;
+      padding-left: 208px;
+    }
+    @include media-min($pc) {
+      max-width: 550px;
+      padding-left: 0;
+    }
+    @include media-min($largePc) {
+      max-width: 720px;
+      padding-left: 60px;
+    }
+  }
+
+  &__label {
+    max-width: 115px;
+    font-size: 16px;
+    line-height: math.div(19, 16);
+    text-transform: capitalize;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include media-min($mobileSmall) {
+      max-width: 200px;
+      font-size: 18px;
+      line-height: math.div(22, 18);
+      text-transform: uppercase;
+    }
+    @include media-min($pc) {
+      max-width: 150px;
+      text-align: left;
+      right: unset;
+      left: 0;
+    }
+    @include media-min($largePc) {
+      max-width: 250px;
+      font-size: 26px;
+      line-height: math.div(31, 26);
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(55%, 0, 0);
+      @include media-min($pc) {
+        transform: translate3d(-55%, 0, 0);
+      }
+    }
+
+    #{$self} &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 216px;
+    margin-bottom: 40px;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: inherit;
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        background: url('@img/icons/star-8.svg') center no-repeat;
+        background-size: contain;
+        margin-right: 22px;
+        @include media-min(360) {
+          width: 50px;
+          height: 50px;
+          margin-right: 25px;
+        }
+        @include media-min($mobileSmall) {
+          margin-right: 40px;
+        }
+        @include media-min($mobile) {
+          margin-right: 48px;
+        }
+        @include media-min($pc) {
+          width: 70px;
+          height: 70px;
+          margin-right: 65px;
+        }
+        @include media-min($largePc) {
+          margin-right: 79px;
+        }
+      }
+    }
+
+    @include media-min(360px) {
+      max-width: 270px;
+    }
+    @include media-min($mobileMini) {
+      margin-bottom: 50px;
+    }
+    @include media-min($mobileSmall) {
+      max-width: 320px;
+      margin-left: 10vw;
+    }
+    @include media-min($mobile) {
+      max-width: 365px;
+      margin-bottom: 60px;
+    }
+    @include media-min($tablet) {
+      max-width: unset;
+      margin-bottom: 100px;
+      margin-left: 0;
+    }
+    @include media-min($pc) {
+      margin-bottom: 176px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 154px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: scale(0.4);
+      & span::before {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+    &._watcher-view {
+      &,
+      & span::before {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: opacity, transform;
+        transition-timing-function: ease;
+        transition-duration: 0.6s;
+      }
+      & span::before {
+        transition-delay: 0.25s;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-width: 230px;
+    min-height: 150px;
+    width: 51.2vw;
+    height: 33.067vw;
+    margin: 0 auto;
+    @include media-min($tablet) {
+      width: 23.264vw;
+      height: 15vw;
+    }
+    @include media-min($largePc) {
+      width: 443px;
+      height: 286px;
+    }
+
+    &--left {
+      margin-bottom: 40px;
+      @include media-min($mobileMini) {
+        margin-bottom: 50px;
+      }
+      @include media-min($mobile) {
+        margin-bottom: 60px;
+      }
+      @include media-min($tablet) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 0);
+        margin-bottom: 0;
+      }
+      @include media-min($pc) {
+        top: unset;
+        bottom: 0;
+        transform: unset;
+      }
+    }
+
+    &--right {
+      @include media-max($pc) {
+        display: none;
+      }
+      @include media-min($pc) {
+        position: absolute;
+        top: 112px;
+        right: 0;
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      &::after {
+        content: '';
+        width: 130px;
+        height: 130px;
+        background: url('@img/facilities/decor.svg') center no-repeat;
+        background-size: contain;
+        position: absolute;
+        @include media-min($largePc) {
+          width: 190px;
+          height: 190px;
+        }
+      }
+    }
+
+    &--left &-wrapper {
+      &::after {
+        display: none;
+      }
+      @include media-between($tablet, $pc) {
+        &::after {
+          display: block;
+          top: 0;
+          right: 0;
+          transform: translate3d(65px, -55px, 0);
+        }
+      }
+    }
+
+    &--right &-wrapper {
+      @include media-min($pc) {
+        &::after {
+          top: 0;
+          left: 0;
+          transform: translate3d(-55px, -60px, 0);
+        }
+      }
+      @include media-min($largePc) {
+        &::after {
+          transform: translate3d(-95px, -95px, 0);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    line-height: math.div(26, 18);
+    @include media-min($mobileMini) {
+      max-width: 58.94vw;
+    }
+    @include media-min($tablet) {
+      max-width: 350px;
+    }
+    @include media-max($tablet) {
+      margin-left: auto;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__items {
+    counter-reset: facilities-item;
+  }
+
+  &__item {
+  }
+}
+
+.facilities-item {
+  $self: &;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba($primary, 0.24);
+  transition: all 0.6s ease 0s;
+  @include media-min($tablet) {
+    padding: 50px 0;
+  }
+  &.open {
+    padding: 150px 0;
+    border-bottom-color: rgba($primary, 0);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @include media-max($tablet) {
+      flex-direction: column;
+    }
+    @include media-min($tablet) {
+      padding: 0 130px 0 251px;
+    }
+    @include media-min($pc) {
+      padding: 0 170px 0 355px;
+    }
+    @include media-min($largePc) {
+      padding: 0 200px 0 447px;
+    }
+
+    transition: all 0.6s ease 0s;
+    #{$self}.open & {
+      cursor: auto;
+      @include media-min($tablet) {
+        min-height: 49.22vw;
+        padding: 0px 47.168vw 0px 24.65vw;
+      }
+      @include media-min($pc) {
+        min-height: 44.56vw;
+        padding: 0px 49.3vw 0px 24.65vw;
+      }
+      @include media-min($largePc) {
+        min-height: 850px;
+        padding: 0px 600px 0px 447px;
+      }
+    }
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    @include media-max($tablet) {
+      flex-shrink: 0;
+      margin-bottom: 40px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include media-min($tablet) {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(0, -50%, 0);
+      width: 180px;
+      height: 180px;
+    }
+    @include media-min($pc) {
+      width: 217px;
+      height: 217px;
+    }
+    @include media-min($largePc) {
+      width: 284px;
+      height: 284px;
+    }
+
+    // transition: all 0.6s ease 0s;
+    transition-property: width, height, top, left, transform;
+    transition-timing-function: ease;
+    transition-duration: 0.6s;
+    .open & {
+      height: 435px;
+      width: 100%;
+
+      @include media-min($tablet) {
+        top: 0;
+        left: 100%;
+        transform: translate3d(-100%, 0, 0);
+        width: 34.765vw;
+        height: 49.22vw;
+      }
+      @include media-min($pc) {
+        width: 31.458vw;
+        height: 44.56vw;
+      }
+      @include media-min($largePc) {
+        width: 600px;
+        height: 850px;
+      }
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-max($tablet) {
+      .open & {
+        position: relative;
+        padding-left: 150px;
+      }
+    }
+    @include media-min($tablet) {
+      min-height: 180px;
+      column-gap: 80px;
+    }
+    @include media-min($pc) {
+      min-height: 217px;
+      column-gap: 100px;
+    }
+    @include media-min($largePc) {
+      min-height: 284px;
+      column-gap: 150px;
+    }
+
+    transition: all 0.6s ease 0s;
+    .open & {
+      flex-direction: column;
+      align-items: unset;
+
+      @include media-min($tablet) {
+        min-height: 400px;
+      }
+      @include media-min($pc) {
+        min-height: 500px;
+      }
+      @include media-min($largePc) {
+        min-height: 658px;
+      }
+    }
+  }
+
+  &__num {
+    font-family: Miracle;
+    text-transform: uppercase;
+
+    transition: all 0.6s ease 0s;
+
+    .open & {
+      opacity: 0;
+      margin-bottom: 70px;
+      transform: translate3d(0, 50px, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &::before {
+      counter-increment: facilities-item;
+      content: counters(facilities-item, '.', decimal-leading-zero);
+    }
+
+    @include media-max($tablet) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .open & {
+        right: unset;
+        left: 0;
+      }
+    }
+
+    font-size: 30px;
+    @include media-min($tablet) {
+      font-size: 36px;
+      line-height: math.div(44, 36);
+    }
+    @include media-min($pc) {
+      font-size: 50px;
+      line-height: math.div(61, 50);
+    }
+    @include media-min($largePc) {
+      font-size: 80px;
+      line-height: math.div(97, 80);
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    transition: all 0.6s ease 0s;
+    .open & {
+      flex: unset;
+    }
+  }
+
+  &__title {
+    font-family: Miracle;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    transition: all 0.6s ease 0s;
+
+    @include media-max($tablet) {
+      text-align: center;
+    }
+    @include media-min($tablet) {
+      font-size: 36px;
+    }
+    @include media-min($pc) {
+      font-size: 50px;
+    }
+    @include media-min($largePc) {
+      font-size: 80px;
+    }
+
+    .open & {
+      opacity: 0;
+    }
+    ._watcher-view & {
+      max-width: 450px;
+      margin-bottom: 20px;
+      opacity: 1;
+      @include media-max($tablet) {
+        text-align: left;
+      }
+      @include media-min($tablet) {
+        margin-bottom: 30px;
+      }
+      @include media-min($pc) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &:not(.open) {
+    @media (any-hover: hover) {
+      &:hover {
+        #{$self}__title,
+        #{$self}__num {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include media-min($tablet) {
+      max-width: 250px;
+    }
+    @include media-min($pc) {
+      max-width: 335px;
+    }
+    @include media-min($largePc) {
+      max-width: 442px;
+    }
+    p {
+      height: 0;
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+      transition: all 0.2s ease 0s;
+
+      ._watcher-view & {
+        height: unset;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.6s ease 0.4s;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    flex-shrink: 0;
+    transition: all 0.6s ease 0s;
+    outline: none;
+
+    img {
+      transition: transform 0.6s ease 0s;
+      transform: rotate(90deg);
+    }
+    &::before {
+      transition: opacity 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover::before {
+        opacity: 0.75;
+      }
+    }
+
+    #{$self}.open &:not(:hover):focus {
+      &::before {
+        animation: 0.8s linear 0s infinite alternate focus;
+      }
+    }
+
+    &:active::before {
+      opacity: 1;
+    }
+
+    @include media-max($tablet) {
+      top: 80%;
+      transition: opacity 0.6s ease 0s;
+    }
+
+    #{$self}:not(.open) & {
+      @include media-max($tablet) {
+        top: 100%;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      width: auto;
+      height: auto;
+      clip-path: unset;
+      left: 100%;
+      transform: translate3d(-100%, -50%, 0);
+      &::before {
+        opacity: 0;
+        transition: opacity 0.3s ease 0s;
+      }
+      img {
+        transform: rotate(0deg);
+        width: 56px;
+        height: 32px;
+        @include media-min($pc) {
+          width: 70px;
+          height: 36px;
+        }
+        @include media-min($largePc) {
+          width: 88px;
+          height: 40px;
+        }
+      }
+
+      &:focus {
+        outline: auto;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+.best {
+  background: url('@img/best/bg.jpeg') center no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    background-color: #000;
+    opacity: 0.25;
+  }
+
+  &__inner {
+    padding: 74px 0 70px;
+    position: relative;
+    z-index: 1;
+
+    @include media-max($mobile) {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @include media-min($mobile) {
+      padding: 50px 0 149px;
+    }
+    @include media-min($pc) {
+      padding: 100px 0 295px;
+    }
+    @include media-min($largePc) {
+      padding-bottom: 377px;
+    }
+  }
+
+  &__title {
+    max-width: 400px;
+    margin-bottom: 160px;
+
+    @include media-min($mobile) {
+      max-width: 600px;
+      margin-bottom: 150px;
+    }
+    @include media-min($tablet) {
+      margin-bottom: 202px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 150px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 250px;
+      max-width: 900px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(-50%, 0, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 1s ease 0s;
+    }
+  }
+
+  &__decor {
+    height: 34vw;
+    width: 100%;
+    background: url('@img/best/line.svg') center repeat-x;
+    margin-bottom: 40px;
+    @include media-min($mobile) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-position: center bottom 50px;
+      margin-bottom: 0;
+    }
+    @include media-min($pc) {
+      background-position: center bottom 95px;
+    }
+    @include media-min($largePc) {
+      background-position: center bottom 190px;
+    }
+    @include media-max($largePc) {
+      background-size: 140%;
+    }
+    @include media-max($mobile) {
+    }
+  }
+
+  &__text {
+    max-width: 210px;
+    font-size: 18px;
+    line-height: math.div(22, 18);
+    text-transform: uppercase;
+    color: $secondary;
+    @include media-max($mobile) {
+      margin-left: auto;
+    }
+    @include media-min($mobileSmall) {
+      max-width: 230px;
+    }
+    @include media-min($pc) {
+      max-width: 330px;
+    }
+    @include media-min($largePc) {
+      max-width: 440px;
+      font-size: 26px;
+      line-height: math.div(31, 26);
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(50%, 0, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 1s ease 0s;
+    }
+  }
+}
+
+//========================================================================================================================================================
+.gallery {
+  padding: 69px 0;
+  position: relative;
+
+  @include media-min($mobile) {
+    padding: 80px 0 270px;
+  }
+  @include media-min($tablet) {
+    padding: 100px 0 339px;
+  }
+  @include media-min($pc) {
+    padding: 250px 0 549px;
+  }
+  @include media-min($largePc) {
+    padding: 300px 0 788px;
+  }
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    @include media-min($pc) {
+      margin-bottom: 70px;
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 50px;
+      background: url('@img/gallery/decor.svg') center no-repeat;
+      background-size: contain;
+      margin: 0 auto 21px;
+
+      @include media-min($tablet) {
+        margin-bottom: 30px;
+      }
+      @include media-min($pc) {
+        width: 100px;
+        height: 71px;
+        margin-bottom: 50px;
+      }
+      @include media-min($largePc) {
+        width: 150px;
+        height: 108px;
+      }
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: scale(1);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 1s ease 0s;
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    position: relative;
+    @include media-min($mobile) {
+      max-width: 420px;
+    }
+    @include media-min($pc) {
+      max-width: 700px;
+    }
+    @include media-min($largePc) {
+      max-width: 916px;
+    }
+  }
+
+  &__top-text {
+    font-size: 13px;
+    line-height: math.div(23, 13);
+    opacity: 0.8;
+    margin: 0 auto 223px;
+    @include media-min($mobile) {
+      max-width: 350px;
+      margin-bottom: 70px;
+    }
+    @include media-min($pc) {
+      max-width: 450px;
+      font-size: 18px;
+      line-height: math.div(28, 18);
+      margin-bottom: 130px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 150px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0.2s,
+        transform 0.6s ease 0.2s;
+    }
+  }
+
+  &__bottom-text {
+    max-width: 300px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    line-height: math.div(19, 16);
+    font-style: italic;
+    text-align: left;
+    opacity: 0.8;
+    padding-left: 52px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      clip-path: polygon(50% 0%, 86% 14%, 100% 50%, 86% 86%, 50% 100%, 14% 86%, 0% 50%, 14% 14%);
+      background-color: $secondary;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include media-min($pc) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @include media-max($pc) {
+      text-transform: capitalize;
+    }
+    @include media-min($pc) {
+      max-width: 430px;
+      min-height: 50px;
+      font-size: 22px;
+      line-height: math.div(26, 22);
+      padding-left: 80px;
+    }
+  }
+
+  &__images {
+    width: 100%;
+    margin-bottom: 100px;
+    @include media-max($mobile) {
+      position: relative;
+    }
+    @include media-min($mobile) {
+      margin-bottom: 50px;
+    }
+    @include media-min($pc) {
+      margin-bottom: 75px;
+    }
+    @include media-min($largePc) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    &--1 {
+      min-width: 192px;
+      width: 51.2vw;
+      height: 250px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      @include media-min($mobileSmall) {
+        width: 400px;
+      }
+      @include media-min($mobile) {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &--2 {
+      width: 218px;
+      height: 140px;
+      bottom: -50px;
+      left: 0;
+      opacity: 0.2;
+
+      @include media-min($mobile) {
+        opacity: 1;
+        top: 0;
+        bottom: unset;
+        width: 250px;
+        height: 160px;
+        left: -54px;
+        transform: translate3d(-100%, 0, 0);
+      }
+      @include media-min($tablet) {
+        width: 300px;
+        height: 192px;
+        left: -124px;
+      }
+      @include media-min($pc) {
+        width: 355px;
+        height: 228px;
+        left: -138px;
+      }
+      @include media-min($largePc) {
+        width: 443px;
+        height: 284px;
+        left: -190px;
+      }
+    }
+    &--3 {
+      width: 220px;
+      height: 147px;
+      top: -80px;
+      right: -47px;
+      opacity: 0.1;
+
+      @include media-min($mobileSmall) {
+        top: 55px;
+      }
+      @include media-min($mobile) {
+        opacity: 1;
+        width: 220px;
+        height: 147px;
+        right: -54px;
+        top: 0;
+        transform: translate3d(100%, 0, 0);
+      }
+      @include media-min($tablet) {
+        right: -126px;
+      }
+      @include media-min($pc) {
+        width: 355px;
+        height: 237px;
+        right: -138px;
+      }
+      @include media-min($largePc) {
+        width: 600px;
+        height: 400px;
+        right: -190px;
+      }
+    }
+    &--4 {
+      width: 152px;
+      height: 206px;
+      top: -97px;
+      left: 0;
+      z-index: 1;
+
+      @include media-min($mobile) {
+        width: 130px;
+        height: 190px;
+        left: -70px;
+        top: unset;
+        bottom: 0;
+        transform: translate3d(-100%, 0, 0);
+      }
+      @include media-min($tablet) {
+        width: 145px;
+        height: 210px;
+        left: -125px;
+      }
+      @include media-min($pc) {
+        width: 217px;
+        height: 295px;
+        left: -138px;
+      }
+      @include media-min($largePc) {
+        width: 286px;
+        height: 387px;
+        left: -187px;
+      }
+    }
+    &--5 {
+      width: 123px;
+      height: 123px;
+      top: -50px;
+      right: 0;
+      z-index: 1;
+      transform: translate3d(0, -100%, 0);
+
+      @include media-min($mobileSmall) {
+        width: 180px;
+        height: 130px;
+        top: -30px;
+      }
+      @include media-min($mobile) {
+        width: 220px;
+        height: 140px;
+        right: -15px;
+        top: unset;
+        bottom: 30px;
+        transform: translate3d(100%, 100%, 0);
+      }
+      @include media-min($tablet) {
+        width: 251px;
+        height: 161px;
+        right: -10px;
+        bottom: 0;
+      }
+      @include media-min($pc) {
+        width: 335px;
+        height: 215px;
+        right: -20px;
+      }
+      @include media-min($largePc) {
+        width: 443px;
+        height: 284px;
+        right: -29px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__line-text {
+    display: none;
+    @include media-min($mobile) {
+      display: block;
+      font-family: Miracle;
+      font-size: 50px;
+      line-height: 1.2;
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+
+      @include media-min($tablet) {
+        font-size: 60px;
+        line-height: math.div(80, 60);
+        bottom: 101px;
+      }
+      @include media-min($pc) {
+        font-size: 100px;
+        line-height: 1.2;
+        bottom: 179px;
+      }
+      @include media-min($largePc) {
+        font-size: 120px;
+        line-height: math.div(140, 120);
+        bottom: 300px;
+      }
+
+      span {
+        display: inline-block;
+        white-space: nowrap;
+        opacity: 0.12;
+        &._opacity-1 {
+          opacity: 1;
+        }
+      }
+      span + span {
+        margin-left: 30px;
+      }
+
+      p {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+
+      &-top {
+      }
+      &-bottom {
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+.contact {
+  padding: 100px 0;
+  @include media-min($tablet) {
+    padding-top: 200px;
+  }
+  @include media-min($pc) {
+    padding: 250px 0 150px;
+  }
+  @include media-min($largePc) {
+    padding: 300px 0 200px;
+  }
+  .container {
+    position: relative;
+  }
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+  &__tell {
+    font-size: 20px;
+    margin-bottom: 71px;
+    padding-bottom: 7px;
+    display: inline-block;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba($primary, 0.34);
+    }
+    @include media-min($mobile) {
+      font-size: 26px;
+      margin-bottom: 52px;
+    }
+    @include media-min($tablet) {
+      font-size: 38px;
+    }
+    @include media-min($pc) {
+      font-size: 50px;
+      margin-bottom: 80px;
+    }
+    @include media-min($largePc) {
+      font-size: 80px;
+      margin-bottom: 83px;
+      padding-bottom: 3px;
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(-50%, 0, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 1s ease 0s;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: math.div(22, 18);
+    text-transform: uppercase;
+    @include media-min($largePc) {
+      font-size: 26px;
+      line-height: math.div(31, 26);
+    }
+  }
+
+  &__text--location {
+    max-width: 172px;
+    margin: 0 0 70px auto;
+    @include media-min($mobile) {
+      margin-right: 60px;
+    }
+    @include media-min($tablet) {
+      margin: 0 184px 100px auto;
+    }
+    @include media-min($pc) {
+      max-width: 240px;
+      margin: 0 213px 150px auto;
+    }
+    @include media-min($largePc) {
+      max-width: 284px;
+      margin: 0 315px 162px auto;
+    }
+    .watcher & {
+      opacity: 0;
+      transform: translate3d(50%, 0, 0);
+    }
+    &._watcher-view {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition:
+        opacity 0.6s ease 0s,
+        transform 0.6s ease 0s;
+    }
+  }
+
+  &__title {
+    max-width: 480px;
+    font-family: Miracle;
+    font-size: 68px;
+    text-transform: uppercase;
+    color: $secondary;
+    text-align: right;
+    margin: 0 auto 36px;
+    @include media-min(360px) {
+      font-size: 84px;
+    }
+    @include media-min($mobile) {
+      font-size: 120px;
+      max-width: 768px;
+    }
+    @include media-min($tablet) {
+      font-size: 150px;
+      max-width: 1024px;
+      margin-bottom: 50px;
+    }
+    @include media-min($pc) {
+      font-size: 250px;
+      max-width: 1400px;
+      margin-bottom: 70px;
+    }
+    @include media-min($largePc) {
+      font-size: 300px;
+      max-width: unset;
+    }
+
+    span {
+      color: $darkColor;
+      margin-right: auto;
+      text-align: left;
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: '';
+        width: 36px;
+        height: 36px;
+        background: url('@img/contact/star.svg') center no-repeat;
+        background-size: contain;
+        @include media-min($mobile) {
+          margin-left: 20px;
+        }
+        @include media-min($tablet) {
+          width: 40px;
+          height: 40px;
+          margin-left: 29px;
+        }
+        @include media-min($pc) {
+          width: 100px;
+          height: 100px;
+          margin-left: 40px;
+        }
+        @include media-min($largePc) {
+          width: 150px;
+          height: 150px;
+          margin-left: 38px;
+        }
+      }
+    }
+
+    .watcher & {
+      opacity: 0;
+      transform: scale(0.4);
+      & span::after {
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+    &._watcher-view {
+      &,
+      & span::after {
+        opacity: 1;
+        transform: scale(1);
+        transition:
+          opacity 0.6s ease 0s,
+          transform 1s ease 0s;
+      }
+      & span::after {
+        transition-delay: 0.2s;
+      }
+    }
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 78.5%;
+    right: 10px;
+    transform: translate3d(0, -50%, 0);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include media-min($mobileSmall) {
+      width: 200px;
+      height: 200px;
+    }
+    @include media-min($mobile) {
+      right: 47px;
+    }
+    @include media-min($tablet) {
+      width: 231px;
+      height: 231px;
+      top: 60%;
+      right: 145px;
+    }
+    @include media-min($pc) {
+      width: 335px;
+      height: 335px;
+      top: 60%;
+      right: 138px;
+    }
+    @include media-min($largePc) {
+      width: 443px;
+      height: 443px;
+      top: 55%;
+      right: 186px;
+    }
+  }
+
+  &__form-wrapper {
+    @include media-max($tablet) {
+      display: none;
+    }
+  }
+  &__form {
+    @include media-max($tablet) {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: none;
+    @include media-max($tablet) {
+      font-size: 14px;
+      line-height: math.div(17, 14);
+      font-style: italic;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      background-color: $secondary;
+      clip-path: polygon(
+        50% -0%,
+        80% 9%,
+        98% 34%,
+        98% 66%,
+        80% 91%,
+        50% 100%,
+        20% 91%,
+        2% 66%,
+        2% 34%,
+        20% 9%
+      );
+    }
+  }
+}
+
+.contact-form {
+  @include media-max($tablet) {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+  &__body {
+    display: flex;
+    align-items: stretch;
+    min-height: 100px;
+    @include media-min($pc) {
+      min-height: 125px;
+    }
+    @include media-min($largePc) {
+      min-height: 150px;
+    }
+    @include media-max($tablet) {
+      max-width: 305px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid $primary;
+    flex: 0 1 378px;
+    @include media-min($pc) {
+      flex-basis: 590px;
+    }
+    @include media-min($largePc) {
+      flex-basis: 630px;
+    }
+  }
+
+  &__date-field {
+    flex-basis: 50%;
+    position: relative;
+    margin: -1px;
+    & + & {
+      &::before {
+        content: '';
+        height: 42.7%;
+        width: 1px;
+        background-color: rgba($primary, 0.24);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 0);
+        @include media-max($tablet) {
+          height: 1px;
+          width: calc(100% - 30px * 2);
+          left: 50%;
+          top: 0;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+    }
+  }
+  &__custom-input {
+    height: 100%;
+    width: 100%;
+    @include media-max($tablet) {
+    }
+  }
+
+  &__date-field._open-book &__custom-input {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__button {
+    flex-basis: 231px;
+    font-size: 14px;
+    line-height: math.div(20, 14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $mainColor;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $primary;
+    padding: 35px;
+    transition: background-color 0.3s ease 0s;
+    @include media-min($pc) {
+      flex-basis: 260px;
+      font-size: 18px;
+      line-height: math.div(20, 18);
+      padding: 48px;
+    }
+    @include media-min($largePc) {
+      flex-basis: 285px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $primary-hover;
+      }
+    }
+    &:active {
+      background-color: $primary-active;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+@keyframes focus {
+  from {
+    opacity: 0.33;
+  }
+  to {
+    opacity: 1;
+  }
+}

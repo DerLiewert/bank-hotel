@@ -1,0 +1,90 @@
+<div id="form-book-popup" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <form action="#" class="popup__form popup-form">
+        <div class="popup-form__date-field" data-book-from data-popup="#book-popup">
+          <input
+            class="hide-input"
+            type="datetime-local"
+            name="date-check-in"
+            id="popup-check-in"
+            tabindex="-1"
+          />
+          <button class="popup-form__custom-input custom-date" type="button">
+            <span>Check in</span>
+            <svg
+              width="20"
+              height="12"
+              viewBox="0 0 20 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                stroke="#FCD043"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- data-popup="#book-popup" -->
+        <div class="popup-form__date-field" data-book-to data-popup="#book-popup">
+          <input
+            class="hide-input"
+            type="datetime-local"
+            name="date-check-out"
+            id="popup-check-out"
+            tabindex="-1"
+          />
+          <button class="popup-form__custom-input custom-date" type="button">
+            <span>Check out</span>
+            <svg
+              width="20"
+              height="12"
+              viewBox="0 0 20 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.2346 1.9375C19.2346 1.9375 16.5049 2.59498 14.1651 4.56741C11.8253 6.53984 9.87548 9.82722 9.87548 9.82722C9.87548 9.82722 7.92566 6.53984 5.58587 4.56741C3.24609 2.59498 0.516338 1.9375 0.516338 1.9375"
+                stroke="#FCD043"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+        <button type="submit" class="popup-form__button">book room</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="book-popup" class="popup" data-popup-no-open-hash>
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <!-- <button data-close type="button" class="popup__close">
+        <svg
+          width="23"
+          height="23"
+          viewBox="0 0 23 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            opacity="0.850056"
+            d="M1.73333 1.48883L21.5469 21.0288"
+            stroke="#979797"
+            stroke-linecap="square"
+          />
+          <path
+            opacity="0.850056"
+            d="M21.2667 1.48883L1.45309 21.0288"
+            stroke="#979797"
+            stroke-linecap="square"
+          />
+        </svg>
+      </button> -->
+    </div>
+  </div>
+</div>
